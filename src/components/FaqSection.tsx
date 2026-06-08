@@ -61,7 +61,7 @@ export default function FaqSection() {
                   className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                 >
                   <div className="flex items-center gap-3">
-                    <HelpCircle className="w-4.5 h-4.5 text-brand-gold-dark shrink-0" />
+                    <HelpCircle className="w-4 h-4 text-brand-gold-dark shrink-0" />
                     <span className="font-display font-semibold text-sm sm:text-base text-brand-offblack text-left">
                       {faq.q}
                     </span>
