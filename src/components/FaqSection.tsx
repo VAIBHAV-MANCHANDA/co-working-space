@@ -93,7 +93,7 @@ export default function FaqSection() {
           </p>
           <a
             href="#briefing-section"
-            className="shrink-0 px-6 py-2.5 bg-brand-charcoal hover:bg-brand-gold text-brand-beige hover:text-brand-offblack text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
+            className="cta-link-button shrink-0 px-6 py-2.5 border text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
           >
             Ask Our Architect
           </a>

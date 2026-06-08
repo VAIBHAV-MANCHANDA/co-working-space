@@ -83,7 +83,7 @@ export default function PlansViewer({ onSelectPlan }: PlansViewerProps) {
               <div className="p-6 pt-2">
                 <button
                   onClick={() => onSelectPlan(plan.id)}
-                  className="w-full py-3 bg-transparent hover:bg-brand-charcoal border border-brand-charcoal text-brand-charcoal hover:text-white text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-all duration-300 flex items-center justify-center gap-1.5"
+                  className="cta-button w-full py-3 border text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-all duration-300 flex items-center justify-center gap-1.5"
                 >
                   Configure This Layout
                   <ArrowUpRight className="w-3.5 h-3.5" />

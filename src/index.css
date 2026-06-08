@@ -6,6 +6,9 @@
   --font-display: "Playfair Display", "Georgia", serif;
   --font-serif: "Playfair Display", "Georgia", serif;
   
+  --color-button-red: #c1121f;
+  --color-button-red-dark: #9b0f1a;
+  --color-button-red-light: #ffe5e8;
   --color-brand-gold: #5E6452;
   --color-brand-gold-light: #E9EAE3;
   --color-brand-gold-dark: #43483A;
@@ -46,4 +49,41 @@ body {
   color: var(--color-brand-offblack);
   font-family: var(--font-sans);
   overflow-x: hidden;
+}
+
+.cta-button {
+  background-color: var(--color-button-red);
+  border-color: var(--color-button-red);
+  color: #ffffff;
+}
+
+.cta-button:hover:not(:disabled) {
+  background-color: var(--color-button-red-dark);
+  border-color: var(--color-button-red-dark);
+  color: #ffffff;
+}
+
+.cta-button:focus-visible,
+.cta-link-button:focus-visible {
+  outline: 2px solid var(--color-button-red-light);
+  outline-offset: 2px;
+}
+
+.cta-button svg,
+.cta-button span,
+.cta-button p,
+.cta-button div {
+  color: inherit;
+}
+
+.cta-link-button {
+  background-color: var(--color-button-red);
+  border-color: var(--color-button-red);
+  color: #ffffff;
+}
+
+.cta-link-button:hover {
+  background-color: var(--color-button-red-dark);
+  border-color: var(--color-button-red-dark);
+  color: #ffffff;
 }

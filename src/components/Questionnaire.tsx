@@ -357,7 +357,7 @@ Thank you for selecting Co-Working Space. A floor host has been alerted.
                     <button
                       type="submit"
                       disabled={isSubmittingForm}
-                      className="w-full py-4 bg-brand-gold hover:bg-brand-gold-light text-brand-offblack text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-colors duration-300 flex items-center justify-center gap-2"
+                      className="cta-button w-full py-4 text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-colors duration-300 flex items-center justify-center gap-2"
                     >
                       {isSubmittingForm ? "Compiling Architectural Formats..." : "Compile Layout Config File"}
                       <ArrowRight className="w-4 h-4" />
@@ -485,7 +485,7 @@ Thank you for selecting Co-Working Space. A floor host has been alerted.
 
                     <button
                       type="submit"
-                      className="w-full py-3 bg-brand-beige text-brand-offblack hover:bg-brand-gold text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow"
+                      className="cta-button w-full py-3 text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow"
                     >
                       Schedule Physical Tour With Floor Host
                     </button>
@@ -503,7 +503,7 @@ Thank you for selecting Co-Working Space. A floor host has been alerted.
                 <div className="flex flex-col sm:flex-row gap-3 pt-3 border-t border-brand-beige/10">
                   <button
                     onClick={downloadSpecDetails}
-                    className="flex-1 py-3 bg-brand-gold text-brand-offblack hover:bg-brand-gold-light text-xs font-semibold uppercase tracking-wider cursor-pointer text-center flex items-center justify-center gap-2 font-mono transition-all duration-300"
+                    className="cta-button flex-1 py-3 text-xs font-semibold uppercase tracking-wider cursor-pointer text-center flex items-center justify-center gap-2 font-mono transition-all duration-300"
                   >
                     <FileText className="w-4 h-4" />
                     Download Layout Spex.txt

@@ -1,4 +1,5 @@
 import React from "react";
+import logoImg from "../../assets/co-working-logo.png";
 
 interface LogoProps {
   className?: string;
@@ -19,7 +20,7 @@ export default function Logo({ className = "", size = "md", theme = "light" }: L
   return (
     <div id="company-logo" className={`flex items-center ${className}`}>
       <img
-        src="/co-working-logo.png"
+        src={logoImg}
         alt="Co-Working Space Logo"
         width={width}
         className="object-contain h-auto max-w-full"

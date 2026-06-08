@@ -74,11 +74,11 @@ export default function Hero({ onStartBriefing }: HeroProps) {
 
             {/* Pure Architectural CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                id="hero-start-briefing"
-                onClick={onStartBriefing}
-                className="flex items-center justify-center gap-3 px-8 py-3.5 bg-brand-charcoal text-brand-beige hover:bg-brand-gold hover:text-brand-offblack text-xs font-semibold uppercase tracking-wider rounded-none border border-brand-charcoal hover:border-brand-gold transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
-              >
+                <button
+                  id="hero-start-briefing"
+                  onClick={onStartBriefing}
+                  className="cta-button flex items-center justify-center gap-3 px-8 py-3.5 text-xs font-semibold uppercase tracking-wider rounded-none border transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+                >
                 Begin Space Briefing
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -88,7 +88,7 @@ export default function Hero({ onStartBriefing }: HeroProps) {
                   const el = document.getElementById("areas-section");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex items-center justify-center px-8 py-3.5 bg-transparent border border-brand-charcoal/20 text-brand-charcoal hover:border-brand-charcoal text-xs font-semibold uppercase tracking-wider rounded-none transition-all duration-300 cursor-pointer"
+                className="cta-button flex items-center justify-center px-8 py-3.5 border text-xs font-semibold uppercase tracking-wider rounded-none transition-all duration-300 cursor-pointer"
               >
                 Explore Locations
               </button>

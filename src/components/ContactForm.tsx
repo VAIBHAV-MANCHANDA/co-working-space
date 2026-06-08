@@ -1,19 +1,40 @@
 import React, { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
-import { PLANS, LOCATIONS } from "../data";
+import { LOCATIONS } from "../data";
 
 interface ContactFormProps {
   className?: string;
   onSuccess?: () => void;
 }
 
+const BOOKING_OPTIONS = [
+  { id: "dedicated-desks", title: "Dedicated Desks" },
+  { id: "private-cabins", title: "Private Cabins" },
+  { id: "managed-office-space", title: "Managed Office Space" },
+  { id: "meeting-room", title: "Meeting Room" },
+  { id: "conference-room", title: "Conference Room" },
+];
+
+const SEAT_OPTIONS = [
+  "1",
+  "2-3",
+  "4-5",
+  "6-10",
+  "11-20",
+  "21-50",
+  "51-100",
+  "100+",
+  "Not specified",
+];
+
 export default function ContactForm({ className = "", onSuccess }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    seatsRequired: "Not specified",
     location: "mohali",
-    plan: "private-cabin",
+    plan: "dedicated-desks",
     message: "",
   });
 
@@ -46,15 +67,16 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
       name: "",
       email: "",
       phone: "",
+      seatsRequired: "Not specified",
       location: "mohali",
-      plan: "private-cabin",
+      plan: "dedicated-desks",
       message: "",
     });
     setIsSubmitted(false);
   };
 
   const selectedLoc = LOCATIONS.find((l) => l.id === formData.location) || LOCATIONS[0];
-  const selectedPlan = PLANS.find((p) => p.id === formData.plan) || PLANS[0];
+  const selectedPlan = BOOKING_OPTIONS.find((option) => option.id === formData.plan) || BOOKING_OPTIONS[0];
 
   return (
     <div className={`bg-white border border-brand-sand shadow-lg p-6 sm:p-8 relative ${className}`}>
@@ -138,36 +160,42 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
             </div>
           </div>
 
+          <div className="space-y-1">
+            <label className="text-[9px] font-mono text-brand-offblack/60 uppercase font-semibold">
+              Seats Required *
+            </label>
+            <select
+              name="seatsRequired"
+              required
+              value={formData.seatsRequired}
+              onChange={handleInputChange}
+              className="w-full bg-brand-beige/50 border border-brand-sand px-3 py-2 text-xs text-brand-offblack focus:outline-none focus:border-brand-gold focus:bg-white font-light transition-all"
+            >
+              {SEAT_OPTIONS.map((seatOption) => (
+                <option key={seatOption} value={seatOption}>
+                  {seatOption}
+                </option>
+              ))}
+            </select>
+          </div>
+
           {/* Plan Selection */}
           <div className="space-y-1">
             <label className="text-[9px] font-mono text-brand-offblack/60 uppercase font-semibold">
               Desired Spatial format
             </label>
-            <div className="grid grid-cols-2 gap-2">
-              {PLANS.map((plan) => (
-                <label
-                  key={plan.id}
-                  className={`flex items-center gap-2 p-2 border cursor-pointer transition-all duration-200 ${
-                    formData.plan === plan.id
-                      ? "bg-brand-gold-light/40 border-brand-gold text-brand-offblack"
-                      : "border-brand-sand/65 hover:border-brand-gold/40"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="plan"
-                    value={plan.id}
-                    checked={formData.plan === plan.id}
-                    onChange={handleInputChange}
-                    className="accent-brand-gold scale-75"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-[11px] font-semibold">{plan.title}</span>
-                    <span className="text-[8px] text-brand-offblack/50">{plan.startingPrice}</span>
-                  </div>
-                </label>
+            <select
+              name="plan"
+              value={formData.plan}
+              onChange={handleInputChange}
+              className="w-full bg-brand-beige/50 border border-brand-sand px-3 py-2 text-xs text-brand-offblack focus:outline-none focus:border-brand-gold focus:bg-white font-light transition-all"
+            >
+              {BOOKING_OPTIONS.map((plan) => (
+                <option key={plan.id} value={plan.id}>
+                  {plan.title}
+                </option>
               ))}
-            </div>
+            </select>
           </div>
 
           {/* Message */}
@@ -189,7 +217,7 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 bg-brand-charcoal text-brand-beige hover:bg-brand-gold hover:text-brand-offblack text-xs font-semibold uppercase tracking-wider rounded-none transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm disabled:opacity-50"
+            className="cta-button w-full py-3 text-xs font-semibold uppercase tracking-wider rounded-none transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm disabled:opacity-50"
           >
             {isSubmitting ? "Routing Request..." : "Submit Inquiry"}
             <Send className="w-3.5 h-3.5" />
@@ -223,6 +251,10 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
               <div>
                 <span className="text-brand-offblack/40 block text-[8px] font-mono uppercase">FORMAT:</span>
                 <span className="font-medium text-brand-offblack">{selectedPlan.title}</span>
+              </div>
+              <div>
+                <span className="text-brand-offblack/40 block text-[8px] font-mono uppercase">SEATS:</span>
+                <span className="font-medium text-brand-offblack">{formData.seatsRequired}</span>
               </div>
             </div>
           </div>

@@ -97,7 +97,7 @@ export default function Navbar({ onStartBriefing }: NavbarProps) {
             <button
               id="cta-match-workspace"
               onClick={onStartBriefing}
-              className="px-5 py-2.5 bg-brand-charcoal hover:bg-brand-gold hover:text-brand-offblack text-brand-beige text-xs font-semibold uppercase tracking-wider rounded-none border border-brand-charcoal transition-all duration-300 shadow-sm hover:shadow cursor-pointer"
+              className="cta-button px-5 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-none border transition-all duration-300 shadow-sm hover:shadow cursor-pointer"
             >
               Match My Workspace
             </button>

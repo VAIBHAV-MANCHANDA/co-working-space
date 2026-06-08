@@ -158,7 +158,7 @@ export default function AreaExplorer({ onSelectLocation }: AreaExplorerProps) {
               </span>
               <button
                 onClick={() => onSelectLocation(selectedLoc.id)}
-                className="flex items-center justify-center gap-2 self-start sm:self-center px-6 py-3 bg-brand-charcoal hover:bg-brand-gold text-brand-beige hover:text-brand-offblack text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-colors duration-300"
+                className="cta-button flex items-center justify-center gap-2 self-start sm:self-center px-6 py-3 text-xs font-semibold uppercase tracking-wider rounded-none cursor-pointer transition-colors duration-300"
               >
                 Select {selectedLoc.name} Desk Grid
                 <ArrowRight className="w-4 h-4" />
