@@ -27,11 +27,18 @@ const SEAT_OPTIONS = [
   "Not specified",
 ];
 
+const BUDGET_OPTIONS = [
+  "5k to 10k",
+  "10k to 15k",
+  "15k and above",
+];
+
 export default function ContactForm({ className = "", onSuccess }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    budget: "5k to 10k",
     seatsRequired: "Not specified",
     location: "mohali",
     plan: "dedicated-desks",
@@ -67,6 +74,7 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
       name: "",
       email: "",
       phone: "",
+      budget: "5k to 10k",
       seatsRequired: "Not specified",
       location: "mohali",
       plan: "dedicated-desks",
@@ -179,6 +187,25 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
             </select>
           </div>
 
+          <div className="space-y-1">
+            <label className="text-[9px] font-mono text-brand-offblack/60 uppercase font-semibold">
+              Budget *
+            </label>
+            <select
+              name="budget"
+              required
+              value={formData.budget}
+              onChange={handleInputChange}
+              className="w-full bg-brand-beige/50 border border-brand-sand px-3 py-2 text-xs text-brand-offblack focus:outline-none focus:border-brand-gold focus:bg-white font-light transition-all"
+            >
+              {BUDGET_OPTIONS.map((budgetOption) => (
+                <option key={budgetOption} value={budgetOption}>
+                  {budgetOption}
+                </option>
+              ))}
+            </select>
+          </div>
+
           {/* Plan Selection */}
           <div className="space-y-1">
             <label className="text-[9px] font-mono text-brand-offblack/60 uppercase font-semibold">
@@ -255,6 +282,10 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
               <div>
                 <span className="text-brand-offblack/40 block text-[8px] font-mono uppercase">SEATS:</span>
                 <span className="font-medium text-brand-offblack">{formData.seatsRequired}</span>
+              </div>
+              <div>
+                <span className="text-brand-offblack/40 block text-[8px] font-mono uppercase">BUDGET:</span>
+                <span className="font-medium text-brand-offblack">{formData.budget}</span>
               </div>
             </div>
           </div>
