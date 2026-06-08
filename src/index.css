@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  
+  --color-brand-gold: #5E6452;
+  --color-brand-gold-light: #E9EAE3;
+  --color-brand-gold-dark: #43483A;
+  --color-brand-offblack: #1A1A1A;
+  --color-brand-charcoal: #1E201B;
+  --color-brand-beige: #FBFBF9;
+  --color-brand-sand: #E4E5DC;
+  --color-brand-blue: #3E5E7A;
+  --color-brand-green: #5E6452;
+}
+
+/* Custom subtle scrollbar and sleek selections responsive to Natural Tones theme */
+::selection {
+  background-color: var(--color-brand-gold-light);
+  color: var(--color-brand-offblack);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-sand);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold);
+}
+
+body {
+  background-color: var(--color-brand-beige);
+  color: var(--color-brand-offblack);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Co-Working Space",
+  "description": "Premium design-forward managed offices and coworking spaces across Chandigarh, Mohali, Panchkula, and Ambala.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
